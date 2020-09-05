@@ -1,0 +1,9 @@
+.bg-orange{
+    background-color: rgb(255, 160, 17)
+}
+.bg-clean-blue{
+    color: #33ccff;
+}
+.bg-clean-blue:hover{
+    color: #1da9d8;
+}
