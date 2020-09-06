@@ -1,0 +1,16 @@
+.center-aling{
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}
+
+.login-card {
+    width:350px;
+    height:auto;
+    justify-content: center;
+    align-items: center; 
+    display: flex;
+    border: solid 1px rgb(206, 206, 206);
+    border-radius: 10px;
+    background-color: white;
+}
