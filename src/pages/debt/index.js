@@ -1,6 +1,10 @@
 import React from 'react';
-import '../style.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import '../style.css';
+import InputMask from 'react-input-mask';
+import NumberFormat from 'react-number-format';
+
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import {
     faListAlt,
@@ -9,25 +13,27 @@ import {
     faTrashAlt,
     faPlusCircle,
     faCalendarDay
-} from '@fortawesome/free-solid-svg-icons'
+} from '@fortawesome/free-solid-svg-icons';
 
-import Header from '../../components/header'
-
-import Footer from '../../components/footer'
-import { Link } from 'react-router-dom';
+import Header from '../../components/header';
+import Footer from '../../components/footer';
 
 
 
 export default class Taks extends React.Component {
 
+
+
     render() {
+
+
         return (
+
             <div className="container ">
                 <div className="container  pt-5 mt-5">
-                        
+                    <Header />
                     <div className=" d-none d-lg-block ">
-                        <Header />
-                        <button className="btn bg-clean-blue float-right mb-2"><FontAwesomeIcon size="2x" icon={faPlusCircle} /></button>
+                        <button className="btn bg-clean-blue float-right mb-2" data-toggle="modal" data-target="#addModal"><FontAwesomeIcon size="2x" icon={faPlusCircle} /></button>
                         <table className="table table-bordered table-striped text-center">
                             <thead className="bg-primary text-light">
                                 <tr>
@@ -70,14 +76,13 @@ export default class Taks extends React.Component {
                     </div>
 
                     <div className="d-md-block d-sm-block d-lg-none">
-                        <ul class="list-group mr-5 ml-5">
+                        <ul className="list-group mr-5 ml-5">
                             <button className="btn bg-clean-blue float-right mb-2"><FontAwesomeIcon size="2x" icon={faPlusCircle} /></button>
-                            <li class="list-group-item active">Nome: Nome da dívida</li>
-                            <li class="list-group-item">Valor: R$ 250,00</li>
-                            <li class="list-group-item">Data de vencimento: 09/10/2020</li>
-                            <li class="list-group-item">Situação: Paga</li>
-                            <li class="list-group-item">
-
+                            <li className="list-group-item active">Nome: Nome da dívida</li>
+                            <li className="list-group-item">Valor: R$ 250,00</li>
+                            <li className="list-group-item">Data de vencimento: 09/10/2020</li>
+                            <li className="list-group-item">Situação: Paga</li>
+                            <li className="list-group-item">
                                 <button className="btn btn-success col-12  mt-2"><FontAwesomeIcon icon={faMoneyBillWave} /></button>
                                 <button className="btn bg-orange text-light col-12 mt-2"><FontAwesomeIcon icon={faMoneyBillWave} /></button>
                                 <button className="btn btn-warning text-light col-12 mt-2 "><FontAwesomeIcon icon={faEdit} /></button>
@@ -85,13 +90,43 @@ export default class Taks extends React.Component {
                             </li>
                         </ul>
                     </div>
-                    <div class="alert alert-primary  mt-5" role="alert">
+                    <div className="alert alert-primary  mt-5" role="alert">
                         <h5 className="text-center">TOTAL</h5>
                     </div>
                     <div className="total pb-5">
-                        <p className="mt-3">Total em aberto: </p>
+                        <h5 className="mt-3">Total em aberto: </h5>
                         <hr></hr>
-                        <p className="mt-3">Total pago: </p>
+                        <h5 className="mt-3">Total pago: </h5>
+                    </div>
+                </div>
+                {/* Modal Adicionar */}
+                <div className="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+                    <div className="modal-dialog">
+                        <div className="modal-content">
+                            <div className="modal-header text-light bg-primary">
+                                <h5 className="modal-title text-uppercase text-center " id="exampleModalLabel">Adicionar despesa</h5>
+                            </div>
+                            <div className="modal-body">
+                                <div className="row">
+                                    <div className="col-12 col-md-12">
+                                        <span>Nome</span>
+                                        <input className="form-control" type="text" name="name" />
+                                    </div>
+                                    <div className="col-12 col-md-6 mt-2">
+                                        <span>Valor</span>
+                                        <NumberFormat className="form-control" type="text" name="value"  thousandSeparator={true} prefix={'R$'} />
+                                    </div>
+                                    <div className="col-12 col-md-6 mt-2">
+                                        <span>Data de vencimento</span>
+                                        <input className="form-control" type="date" name="date" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="modal-footer">
+                                <button type="button" className="btn btn-success" >Adicionar</button>
+                                <button type="button" className="btn btn-dark" data-dismiss="modal">Fechar</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <Footer />

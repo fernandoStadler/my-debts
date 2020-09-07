@@ -17,11 +17,8 @@ import { Link } from 'react-router-dom';
 
 
 export default class Login extends React.Component {
-
     render() {
-
         return (
-
             <div className="content">
                 <div className="container pt-5 pb-5 mt-5">
                     <div className="center-aling">
@@ -35,28 +32,25 @@ export default class Login extends React.Component {
                                         <p>Faça login para continuar ou crie uma conta!</p>
                                     </div>
                                     <div className="center-aling col-12 mt-3">
-                                        <input className="form-control" type="email" />
+                                        <input className="form-control" type="email" name="email" placeholder="Login"/>
                                     </div>
                                     <div className="center-aling col-12 mt-3">
-                                        <input className="form-control" type="password" />
+                                        <input className="form-control" type="password" name="password"  placeholder="Senha" />
                                     </div>
                                     <div className="col-12 col-md-12 text-center mt-2">
                                         <a type="submit" class="text-primary">Esqueci a minha senha</a>
                                     </div>
                                     <div className="col-12 col-md-6 mt-5 pb-3">
-                                        <button type="submit" class=" btn btn-link btn-block">Criar nova conta</button>
+                                        <button type="button" class=" btn btn-link btn-block">Criar nova conta</button>
                                     </div>
                                     <div className="col-12 col-md-6 mt-5 pb-3">
                                         <Link type="submit" class="btn btn-primary btn-block" to={'/'}>Logar</Link>
                                     </div>
                                 </div>
                             </form>
-
                         </div>
                     </div>
                 </div>
-
-              
             </div>
         );
     }
