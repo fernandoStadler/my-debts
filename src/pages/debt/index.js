@@ -77,7 +77,7 @@ export default class Taks extends React.Component {
 
                     <div className="d-md-block d-sm-block d-lg-none">
                         <ul className="list-group mr-5 ml-5">
-                            <button className="btn bg-clean-blue float-right mb-2"><FontAwesomeIcon size="2x" icon={faPlusCircle} /></button>
+                            <button className="btn bg-clean-blue float-right mb-2"  data-toggle="modal" data-target="#addModal"><FontAwesomeIcon size="2x" icon={faPlusCircle} /></button>
                             <li className="list-group-item active">Nome: Nome da dívida</li>
                             <li className="list-group-item">Valor: R$ 250,00</li>
                             <li className="list-group-item">Data de vencimento: 09/10/2020</li>
